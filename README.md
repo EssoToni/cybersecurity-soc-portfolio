@@ -18,11 +18,11 @@ PowerShell | Bash | MITRE ATT&CK | Nessus/OpenVAS
 
 ## Featured Investigations
 
-01 — Brute Force Investigation
-02 — Suspicious PowerShell
-03 — Network Port Scan
-04 — Suspicious Process Execution
-05 — Phishing Investigation
-06 — Vulnerability Assessment
-07 — Threat Hunting Case
+01 — Brute Force Investigation 
+02 — Suspicious PowerShell 
+03 — Network Port Scan 
+04 — Suspicious Process Execution 
+05 — Phishing Investigation 
+06 — Vulnerability Assessment 
+07 — Threat Hunting Case 
 08 — SOC Automation
