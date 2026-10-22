@@ -18,6 +18,7 @@ PowerShell | Bash | MITRE ATT&CK | Nessus/OpenVAS
 
 ## Featured Investigations
 
+<<<<<<< HEAD
 01 — Brute Force Investigation
 02 — Suspicious PowerShell
 03 — Network Port Scan
@@ -33,3 +34,5 @@ PowerShell | Bash | MITRE ATT&CK | Nessus/OpenVAS
 - [Asset Inventory](docs/asset-inventory.md)
 - [Baseline Status](docs/baseline-status.md)
 - [Limitations](docs/limitations.md)
+=======
+
