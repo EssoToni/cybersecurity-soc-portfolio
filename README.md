@@ -26,3 +26,10 @@ PowerShell | Bash | MITRE ATT&CK | Nessus/OpenVAS
 06 — Vulnerability Assessment
 07 — Threat Hunting Case
 08 — SOC Automation
+
+## Documentation
+
+- [Architecture](docs/soc-lab-wazuh-siem-architecture.png)
+- [Asset Inventory](docs/asset-inventory.md)
+- [Baseline Status](docs/baseline-status.md)
+- [Limitations](docs/limitations.md)
