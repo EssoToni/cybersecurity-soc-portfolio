@@ -1,0 +1,128 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.10.27",
+  "_id": "8lItfaEBj4PXf-m355wg",
+  "_version": 1,
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.56.30",
+      "name": "WIN-ENDPOINT-01",
+      "id": "002"
+    },
+    "manager": {
+      "name": "SIEM-01"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "subjectLogonId": "0x3e7",
+          "subjectDomainName": "WORKGROUP",
+          "ipAddress": "127.0.0.1",
+          "authenticationPackageName": "Negotiate",
+          "workstationName": "WIN-ENDPOINT-01",
+          "subStatus": "0xc000006a",
+          "logonProcessName": "User32",
+          "targetUserName": "Administrator",
+          "keyLength": "0",
+          "subjectUserSid": "S-1-5-18",
+          "processId": "0x164",
+          "processName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+          "ipPort": "0",
+          "failureReason": "%%2313",
+          "targetDomainName": "WIN-ENDPOINT-01",
+          "targetUserSid": "S-1-0-0",
+          "logonType": "7",
+          "subjectUserName": "WIN-ENDPOINT-01$",
+          "status": "0xc000006d"
+        },
+        "system": {
+          "eventID": "4625",
+          "keywords": "0x8010000000000000",
+          "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+          "level": "0",
+          "channel": "Security",
+          "opcode": "0",
+          "message": "\"Échec d’ouverture de session d’un compte.\r\n\r\nSujet :\r\n\tID de sécurité :\t\tS-1-5-18\r\n\tNom du compte :\t\tWIN-ENDPOINT-01$\r\n\tDomaine du compte :\t\tWORKGROUP\r\n\tID d’ouverture de session :\t\t0x3E7\r\n\r\nType d’ouverture de session :\t\t\t7\r\n\r\nCompte pour lequel l’ouverture de session a échoué :\r\n\tID de sécurité :\t\tS-1-0-0\r\n\tNom du compte :\t\tAdministrator\r\n\tDomaine du compte :\t\tWIN-ENDPOINT-01\r\n\r\nInformations sur l’échec :\r\n\tRaison de l’échec :\t\tNom d’utilisateur inconnu ou mot de passe incorrect.\r\n\tÉtat :\t\t\t0xC000006D\r\n\tSous-état :\t\t0xC000006A\r\n\r\nInformations sur le processus :\r\n\tID du processus de l’appelant :\t0x164\r\n\tNom du processus de l’appelant :\tC:\\Windows\\System32\\svchost.exe\r\n\r\nInformations sur le réseau :\r\n\tNom de la station de travail :\tWIN-ENDPOINT-01\r\n\tAdresse du réseau source :\t127.0.0.1\r\n\tPort source :\t\t0\r\n\r\nInformations détaillées sur l’authentification :\r\n\tProcessus d’ouverture de session :\t\tUser32 \r\n\tPackage d’authentification :\tNegotiate\r\n\tServices en transit :\t-\r\n\tNom du package (NTLM uniquement) :\t-\r\n\tLongueur de clé :\t\t0\r\n\r\nCet événement est généré lorsqu’une demande d’ouverture de session échoue. Il est généré sur l’ordinateur sur lequel l’accès a été tenté.\r\n\r\nLe champ Objet indique le compte sur le système local qui a demandé l’ouverture de session. Il s’agit le plus souvent d’un service, comme le service Serveur, ou un processus local tel que Winlogon.exe ou Services.exe.\r\n\r\nLe champ Type d’ouverture de session indique le type d’ouverture de session qui a été demandé. Les types les plus courants sont 2 (interactif) et 3 (réseau).\r\n\r\nLes champs relatifs aux informations sur le processus indiquent quel est le compte et le processus sur le système qui ont demandé l’ouverture de session.\r\n\r\nLes champs relatifs aux informations sur le réseau indiquent la provenance de la demande d’ouverture de session distante. Le nom de la station de travail n’étant pas toujours disponible, peut rester vide dans certains cas.\r\n\r\nLes champs relatifs aux informations d’authentification fournissent des détails sur cette demande d’ouverture de session spécifique.\r\n\t- Les services en transit indiquent les services intermédiaires qui ont participé à cette demande d’ouverture de session.\r\n\t- Le nom du package indique quel a été le sous-protocole qui a été utilisé parmi les protocoles NTLM.\r\n\t- La longueur de la clé indique la longueur de la clé de session générée. Elle a la valeur 0 si aucune clé de session n’a été demandée.\"",
+          "version": "0",
+          "systemTime": "2026-10-27T11:45:13.427155300Z",
+          "eventRecordID": "5798",
+          "threadID": "692",
+          "computer": "WIN-ENDPOINT-01",
+          "task": "12544",
+          "processID": "648",
+          "severityValue": "AUDIT_FAILURE",
+          "providerName": "Microsoft-Windows-Security-Auditing"
+        }
+      }
+    },
+    "rule": {
+      "mail": false,
+      "level": 5,
+      "pci_dss": [
+        "10.2.4",
+        "10.2.5"
+      ],
+      "hipaa": [
+        "164.312.b"
+      ],
+      "tsc": [
+        "CC6.1",
+        "CC6.8",
+        "CC7.2",
+        "CC7.3"
+      ],
+      "description": "Logon Failure - Unknown user or bad password",
+      "groups": [
+        "windows",
+        "windows_security",
+        "authentication_failed"
+      ],
+      "nist_800_53": [
+        "AU.14",
+        "AC.7"
+      ],
+      "gdpr": [
+        "IV_35.7.d",
+        "IV_32.2"
+      ],
+      "firedtimes": 1,
+      "mitre": {
+        "technique": [
+          "Account Access Removal"
+        ],
+        "id": [
+          "T1531"
+        ],
+        "tactic": [
+          "Impact"
+        ]
+      },
+      "id": "60122",
+      "gpg13": [
+        "7.1"
+      ]
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1793101514.248830",
+    "timestamp": "2026-10-27T11:45:14.662+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-10-27T11:45:14.662Z"
+    ]
+  },
+  "highlight": {
+    "data.win.system.eventID": [
+      "@opensearch-dashboards-highlighted-field@4625@/opensearch-dashboards-highlighted-field@"
+    ]
+  },
+  "sort": [
+    1793101514662
+  ]
+}

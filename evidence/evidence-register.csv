@@ -1,1 +1,8 @@
 id,date,checklist_ref,description,file_path,type,status,notes
+E-001,2026-10-23,TV-01,Manager daemon and API status,lab-baseline/telemetry-validation/screenshots/01-wazuh-manager-health.png,png,present,sanitized
+E-002,2026-10-23,TV-02,Windows agent Active,lab-baseline/telemetry-validation/screenshots/02-windows-agent-status.png,png,present,sanitized
+E-003,2026-10-23,TV-03,Linux agent Active,lab-baseline/telemetry-validation/screenshots/03-linux-agent-status.png,png,present,sanitized
+E-004,2026-10-23,TV-04,Windows 4625 visible in Discover,lab-baseline/telemetry-validation/screenshots/04-test-event-visible.png,png,present,sanitized
+E-005,2026-10-23,TV-04,4625 event JSON export,lab-baseline/telemetry-validation/sample-events/windows-authentication.json,json,present,sanitized
+E-006,2026-10-23,TV-05,Linux failed SSH log,lab-baseline/telemetry-validation/sample-events/linux-authentication.log,log,present,sanitized
+E-007,2026-10-23,TV-06,Time and hostname verification,lab-baseline/telemetry-validation/screenshots/05-time-and-hostname-check.png,png,present,sanitized
