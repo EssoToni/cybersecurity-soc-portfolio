@@ -24,6 +24,8 @@ graph LR
 
   note["No external route during simulations.<br/>NAT attached for maintenance only, detached before any simulation."]
   LAB --- note
+```
+
 Legend
 
     Solid line: lab monitoring traffic.
