@@ -36,5 +36,4 @@ with the rationale for each. Each row links to its case file.
 - **Keep the failure count bounded.** A few failures (e.g. 5-10) are enough to
   produce the telemetry. We do not generate hundreds of events : it adds no
   analytical value and makes the timeline noisy.
-- **Source host.** The failed attempts originate from ATTACK-01 (or from the
-  manager), not from outside the lab.
+- **Source host.** The failed attempts originate from ATTACK-01, not from outside the lab.

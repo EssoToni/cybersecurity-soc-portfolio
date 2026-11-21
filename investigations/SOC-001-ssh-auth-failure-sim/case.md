@@ -40,7 +40,7 @@
 
 - **Authorization:** [lab-safety.md](../../../docs/policies/lab-safety.md)
 - **Target(s):** WIN-ENDPOINT-01, LNX-ENDPOINT-01
-- **Source host:** ATTACK-01 (or SIEM-01 if ATTACK-01 not yet provisioned)
+- **Source host:** ATTACK-01 
 - **Lab segment:** host-only / internal
 - **Pre-flight checklist completed:** pending
 - **Snapshot name:** pending
