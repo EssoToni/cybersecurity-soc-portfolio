@@ -45,12 +45,59 @@ have explicit written permission to test.
 | SIEM-01 | Wazuh manager / indexer / dashboard | lab segment |
 | WIN-ENDPOINT-01 | Windows endpoint (agent) | lab segment |
 | LNX-ENDPOINT-01 | Linux endpoint (agent) | lab segment |
-| ATTACK-01 (planned) | Simulation source host | lab segment |
+| ATTACK-01 | Simulation source host | lab segment |
 
-Network segment: host-only / internal virtual switch. Documented range for
-public-facing documentation uses RFC 5737 addresses (`192.0.2.0/24`,
-`198.51.100.0/24`, `203.0.113.0/24`).
-Screenshots in this lab use the host-only subnet 192.168.56.0/24 for demonstration purposes. In production or reusable documentation, RFC 5737 ranges (e.g., 192.0.2.0/24, 198.51.100.0/24, 203.0.113.0/24) should be substituted.
+### Operational network
+
+The lab uses a single VirtualBox Host-Only network:
+
+- Subnet: 192.168.56.0/24
+- Mask: 255.255.255.0
+- Host adapter address: 192.168.56.1
+- VM addresses: 192.168.56.10, .20, .30, .40
+
+This is RFC 1918 private addressing. It is the operational network. It is not
+substituted in documentation and it is not renamed.
+
+No VM has an external route during simulations. Bridged, NAT and Internal
+Network adapters are not used. NAT may be attached temporarily for package
+installation outside simulation windows and is detached before any simulation
+begins.
+
+### Documentation addressing
+
+RFC 5737 reserves three ranges for documentation and examples:
+
+- 192.0.2.0/24 (TEST-NET-1)
+- 198.51.100.0/24 (TEST-NET-2)
+- 203.0.113.0/24 (TEST-NET-3)
+
+These ranges are used only for illustrative and synthetic documentation. They
+are never assigned to any VM or host interface in this lab.
+
+Use is limited to:
+
+- Hypothetical external hosts in diagrams.
+- Sanitized replacements for actual public IPv4 addresses in published
+  evidence, when the original public IP must be concealed.
+- Synthetic indicators in detection-engineering exercises.
+
+A TEST-NET address in published evidence is either a substitution or a
+synthetic value. It is never represented as an observed public IP unless it
+actually is one.
+
+### Evidence publication
+
+Original evidence (raw logs, screenshots, PCAPs, exported events) is kept local
+and unmodified. Published derivatives are reviewed:
+
+- Operational lab addresses in 192.168.56.0/24 may be published as-is.
+- Public IPs that are sensitive may be replaced with TEST-NET addresses.
+  Substitutions are consistent across related evidence.
+- Redaction of any field that affects interpretation is noted on the published
+  artifact.
+- Original-to-replacement mappings for public IPs stay local and are never
+  published as a table.
 
 ## 4. Pre-simulation checklist
 

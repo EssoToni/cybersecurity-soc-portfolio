@@ -105,3 +105,22 @@ evidence_id,case_id,captured_utc,artifact_type,description,file_path,collected_b
 EV-01,SOC-001,2026-10-31T14:12Z,screenshot,Wazuh Discover view showing 4625 events,evidence/screenshots/SOC-001_EV-01_2026-10-31T1412Z_win-4625-discover.png,self,wazuh-rule-60122,TL-01,yes
 EV-02,SOC-001,2026-10-31T14:15Z,screenshot,Event Viewer detail of one 4625,evidence/screenshots/SOC-001_EV-02_2026-10-31T1415Z_win-4625-event-detail.png,self,wazuh-rule-60122,TL-01,yes 
 ```
+## 6. Sanitization before commit
+
+Every artifact is checked before being pushed to the public repository. The
+scope of sanitization depends on the class of value:
+
+| Value class | Policy |
+|---|---|
+| Lab hostnames (SIEM-01, LNX-ENDPOINT-01, WIN-ENDPOINT-01, ATTACK-01) | Retained. These follow the lab naming convention and are not sensitive. |
+| Lab usernames (labuser, labvictim, labattacker) | Retained. These are dedicated lab accounts. |
+| Operational lab IPv4 in 192.168.56.0/24 | Retained. These are the actual Host-Only addresses, per docs/policies/lab-safety.md Section 3. |
+| Actual public IPv4 addresses | Replaced with RFC 5737 TEST-NET values only if disclosure creates a privacy or security concern. Substitutions are consistent across related evidence. |
+| Personal hostnames, email addresses, API keys, tokens, passwords | Removed or replaced. Never published. |
+| Personal identity (name, phone, address, employer) | Never published. |
+
+Raw, unmodified captures that contain any value in the last two rows stay
+local and never enter the repository.
+
+See docs/policies/lab-safety.md Section 3 for the governing policy on
+operational versus documentation addressing.
